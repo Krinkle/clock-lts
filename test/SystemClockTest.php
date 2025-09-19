@@ -5,16 +5,14 @@ namespace Lcobucci\Clock;
 
 use DateTimeImmutable;
 use DateTimeZone;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 use function date_default_timezone_get;
 
-#[CoversClass(SystemClock::class)]
+/** @covers \Lcobucci\Clock\SystemClock */
 final class SystemClockTest extends TestCase
 {
-    #[Test]
+    /** @test */
     public function nowShouldRespectTheProvidedTimezone(): void
     {
         $timezone = new DateTimeZone('America/Sao_Paulo');
@@ -29,7 +27,7 @@ final class SystemClockTest extends TestCase
         self::assertLessThanOrEqual($upper, $now);
     }
 
-    #[Test]
+    /** @test */
     public function fromUTCCreatesAnInstanceUsingUTCAsTimezone(): void
     {
         $clock = SystemClock::fromUTC();
@@ -38,7 +36,7 @@ final class SystemClockTest extends TestCase
         self::assertSame('UTC', $now->getTimezone()->getName());
     }
 
-    #[Test]
+    /** @test */
     public function fromSystemTimezoneCreatesAnInstanceUsingTheDefaultTimezoneInSystem(): void
     {
         $clock = SystemClock::fromSystemTimezone();

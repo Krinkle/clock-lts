@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
     colors="true"
+    bootstrap="vendor/autoload.php"
     beStrictAboutOutputDuringTests="true"
     beStrictAboutChangesToGlobalState="true"
-    beStrictAboutCoverageMetadata="true"
+    beStrictAboutCoversAnnotation="true"
     executionOrder="random"
     failOnRisky="true"
     failOnWarning="true"
-    cacheDirectory=".phpunit.cache"
-    requireCoverageMetadata="true"
+    cacheResultFile=".phpunit.result.cache"
+    forceCoversAnnotation="true"
 >
   <php>
     <ini name="date.timezone" value="UTC"/>

@@ -18,14 +18,8 @@
         "psr/clock": "^1.0"
     },
     "require-dev": {
-        "infection/infection": "^0.27",
-        "lcobucci/coding-standard": "^11.0.0",
-        "phpstan/extension-installer": "^1.3.1",
-        "phpstan/phpstan": "^1.10.25",
-        "phpstan/phpstan-deprecation-rules": "^1.1.3",
-        "phpstan/phpstan-phpunit": "^1.3.13",
-        "phpstan/phpstan-strict-rules": "^1.5.1",
-        "phpunit/phpunit": "^10.2.3"
+        "lcobucci/coding-standard": "6.0.1",
+        "phpunit/phpunit": "^9.5.0"
     },
     "replace": {
         "lcobucci/clock": "*"
@@ -39,6 +33,12 @@
         "psr-4": {
             "Lcobucci\\Clock\\": "test"
         }
+    },
+    "scripts": {
+        "test": [
+            "phpunit",
+            "phpcs -sp"
+        ]
     },
     "config": {
         "preferred-install": "dist",

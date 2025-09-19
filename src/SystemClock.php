@@ -11,6 +11,7 @@ use function date_default_timezone_get;
 /** @immutable */
 final class SystemClock implements Clock
 {
+    /** @var DateTimeZone */
     private $timezone;
 
     public function __construct(DateTimeZone $timezone)
